@@ -61,9 +61,9 @@ export default function Bento() {
                 </div>
               </div>
               <div className="col-span-full sm:col-span-3 lg:col-span-2 overflow-hidden relative p-5 rounded-2xl bg-[#e9f3f3] dark:bg-[#184851] border duration-200 border-transparent hover:border-primary h-full">
-                <div className=" h-full pt-10 justify-center items-center">
-                  <div className="pt-6 lg:px-6 w-full">
-                    <svg fill="none" height="94.029" width="321.194" className="mx-auto h-full" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+                <div className="pt-10 justify-center items-center">
+                  <div>
+                    <svg viewBox="0 0 320 100" fill="none" className="h-auto w-full" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
                       <defs>
                         <linearGradient id="b">
                           <stop
