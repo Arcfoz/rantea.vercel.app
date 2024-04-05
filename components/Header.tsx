@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Separator } from "@/components/ui/separator";
 import { MdOutlineFileDownload } from "react-icons/md";
-import { FiBookOpen, FiHome, FiInfo, FiPocket } from "react-icons/fi";
+import { FiBookOpen, FiInfo, FiPocket } from "react-icons/fi";
 import { TbMenuDeep } from "react-icons/tb";
 import { usePathname } from "next/navigation";
 
@@ -55,13 +55,6 @@ export default function Header() {
             </DrawerTrigger>
             <DrawerContent>
               <div className="mt-16 mx-8 flex flex-col gap-3">
-                <Link href={"/"} onClick={() => setOpen(false)}>
-                  <div className="flex items-center gap-4">
-                    <FiHome size={16} />
-                    <h3 className={`font-medium text-lg ${pathname.includes("/") ? "underline" : ""}`}>Beranda</h3>
-                  </div>
-                </Link>
-                <Separator />
                 <Link href={"/partner"} onClick={() => setOpen(false)}>
                   <div className="flex items-center gap-4">
                     <FiPocket size={16} />
