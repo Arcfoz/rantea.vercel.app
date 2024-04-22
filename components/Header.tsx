@@ -7,6 +7,7 @@ import { useState } from "react";
 import { Separator } from "@/components/ui/separator";
 import { MdOutlineFileDownload } from "react-icons/md";
 import { FiBookOpen, FiInfo, FiPocket } from "react-icons/fi";
+import { GoPackage } from "react-icons/go";
 import { TbMenuDeep } from "react-icons/tb";
 import { usePathname } from "next/navigation";
 
@@ -25,28 +26,35 @@ export default function Header() {
   return (
     <section className="sticky top-0 z-50 w-full  border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/95">
       <div className="m-auto flex size-full max-w-screen-2xl justify-between items-center px-6 py-3 lg:px-12 2xl:px-24">
-        <div className="left-0 gap-2 min-[375px]:gap-4 lg:gap-0 2xl:flex-1 lg:-ml-0">
+        <div className="left-0 gap-16 2xl:flex-1 lg:-ml-0 flex">
           <Link href={"/"}>
             <RanteaLogo />
           </Link>
-        </div>
-        <div className="hidden gap-8 lg:flex">
-          <Link href={"/partner"} className={`${pathname.includes("/partner") ? "underline" : ""}`}>
-            Mitra Kami
-          </Link>
-          <Link href={"/about"} className={`${pathname.includes("/about") ? "underline" : ""}`}>
-            Tentang Kami
-          </Link>
-          <Link href={"/blog"} className={`${pathname.includes("/blog") ? "underline" : ""}`}>
-            Artikel
-          </Link>
+          <div className="hidden gap-6 my-auto lg:flex ">
+            <Link href={"/partner"} className={`${pathname.includes("/partner") ? "underline" : ""}`}>
+              Mitra Kami
+            </Link>
+            <Link href={"/about"} className={`${pathname.includes("/about") ? "underline" : ""}`}>
+              Tentang Kami
+            </Link>
+            <Link href={"/blog"} className={`${pathname.includes("/blog") ? "underline" : ""}`}>
+              Artikel
+            </Link>
+          </div>
         </div>
         <div className="hidden lg:flex justify-end gap-2 2xl:flex-1">
           <ModeToggle />
-          <Button className="min-[375px]:inline-flex gap-2">
-            <MdOutlineFileDownload />
-            Unduh aplikasi
-          </Button>
+          <Link href={"/demo"}>
+            <Button className="min-[375px]:inline-flex gap-2" variant="outline">
+              Demo klasifikasi
+            </Button>
+          </Link>
+          <Link href={"/application"} className={`${pathname.includes("/application") ? "hidden" : ""}`}>
+            <Button className="min-[375px]:inline-flex gap-2">
+              <MdOutlineFileDownload />
+              Unduh aplikasi
+            </Button>
+          </Link>
         </div>
         <div className="lg:hidden">
           <Drawer direction="right" open={open} onOpenChange={setOpen}>
@@ -69,6 +77,13 @@ export default function Header() {
                   </div>
                 </Link>
                 <Separator />
+                <Link href={"/demo"} onClick={() => setOpen(false)}>
+                  <div className="flex items-center gap-4">
+                    <GoPackage size={16} />
+                    <h3 className={`font-medium text-lg ${pathname.includes("/demo") ? "underline" : ""}`}>Demo klasifikasi</h3>
+                  </div>
+                </Link>
+                <Separator />
                 <Link href={"/blog"} onClick={() => setOpen(false)}>
                   <div className="flex items-center gap-4">
                     <FiBookOpen size={16} />
@@ -78,10 +93,12 @@ export default function Header() {
               </div>
               <div className="absolute bottom-0 left-0 right-0 flex justify-center mb-8 gap-4">
                 <ModeToggle />
-                <Button className="min-[375px]:inline-flex w-40 gap-2">
-                  <MdOutlineFileDownload />
-                  Unduh aplikasi
-                </Button>
+                <Link href={"/application"} onClick={() => setOpen(false)}>
+                  <Button className="min-[375px]:inline-flex w-40 gap-2">
+                    <MdOutlineFileDownload />
+                    Unduh aplikasi
+                  </Button>
+                </Link>
               </div>
             </DrawerContent>
           </Drawer>

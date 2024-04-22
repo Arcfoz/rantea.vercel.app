@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
-import { Inter, Livvic } from "next/font/google";
-import "./globals.css";
+import { Livvic } from "next/font/google";
+import "../globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Banner from "@/components/Banner";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import AlertBanner from "./alert-banner";
+import { draftMode } from "next/headers";
+import { VisualEditing } from "next-sanity";
 
 const livvic = Livvic({
   subsets: ["latin"],
@@ -31,7 +35,10 @@ export default function RootLayout({
       <body className={`${livvic.className} selection:bg-primary selection:text-primary-foreground`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <Header />
+          {draftMode().isEnabled && <AlertBanner />}
           {children}
+          {draftMode().isEnabled && <VisualEditing />}
+          <SpeedInsights />
         </ThemeProvider>
         <Banner />
         <Footer />

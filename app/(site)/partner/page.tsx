@@ -17,10 +17,10 @@ export default function page() {
           <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-9 ">
             <div className="lg:pr-24 flex items-center">
               <div className="data w-full">
-                <Image src="/ptpn_bg.png" width={1000} height={1000} alt="About Us tailwind page" className="block lg:hidden mb-9 mx-auto" />
+                <Image src="/ptpn_bg.png" width={1000} height={1000} alt="About Us tailwind page" className="block lg:hidden mb-9 mx-auto rounded-xl" />
                 <h2 className="font-bold text-4xl lg:text-5xl mb-9 max-lg:text-center">PT. Perkebunan Nusantara VIII</h2>
                 <p className="text-xl leading-8 text-slate-500 dark:text-gray-400 max-lg:text-justify max-w-2xl mx-auto mb-9">
-                  PT Perkebunan Nusantara VIII merupakan perkebunan teh terbesar dan terluas di Indonesia. PT Perkebunan Nusantara VIII telah mengekspor teh ke seluruh dunia dan 10 negara tujuan terbesar kami adalah Malaysia, Belanda,
+                  PT Perkebunan Nusantara VIII merupakan perkebunan teh terbesar dan terluas di Indonesia. PT Perkebunan Nusantara VIII telah mengekspor teh ke seluruh dunia dan 10 negara tujuan terbesarnya adalah Malaysia, Belanda,
                   Jepang, Amerika, Inggris, Polandia, Uni Emirat Arab, Rusia, Jerman, Pakistan, dan lainnya.
                 </p>
                 <div className="max-lg:text-center max-w-2xl mx-auto">

@@ -47,7 +47,7 @@ function Copyright() {
 export default function Footer() {
   return (
     <div className="m-auto flex w-full max-w-screen-2xl flex-col gap-1 px-3 py-6 lg:px-12 2xl:px-24">
-      <div className="mb-6 flex w-full flex-col gap-12 lg:mb-12 lg:flex-row lg:gap-20 ">
+      <div className="mb-6 flex w-full flex-col gap-12 lg:flex-row lg:gap-20 ">
         <div className="flex flex-col items-center gap-3 text-center lg:items-start lg:text-left  ">
           <RanteaLogo />
           <p className="text-sm text-slate-500 dark:text-gray-400 ">
@@ -59,11 +59,12 @@ export default function Footer() {
           <FooterColumn />
         </div>
       </div>
+      <iframe id="my-frame" width="250" height="30"></iframe>
       <Separator />
       <div className="flex w-full flex-col-reverse items-center gap-6 text-center lg:flex-row lg:items-center lg:gap-0 lg:text-left">
         <Copyright />
         <div className="flex">
-          <Link href={"/rss.xml"} target="_blank">
+          <Link href={"/rss"} target="_blank">
             <Button variant={"ghost"} className="gap-2">
               <h4 className="text-xs">RSS</h4>
               <FiRss size={18} />

@@ -1,10 +1,24 @@
+"use client";
+
 import Image from "next/image";
-import React from "react";
-import moment from "moment";
+import { useEffect, useState } from "react";
 import { CiCamera } from "react-icons/ci";
 import { VscHistory } from "react-icons/vsc";
+import dayjs from "dayjs";
 
 export default function Bento() {
+  const [today, setToday] = useState(dayjs().format("MMMM D YYYY"));
+  const [yesterday, setYesterday] = useState(dayjs().subtract(1, "day").format("MMMM D YYYY"));
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const newDate = dayjs();
+      setToday(newDate.format("MMMM D, YYYY"));
+      setYesterday(newDate.subtract(1, "day").format("MMMM D, YYYY"));
+    }, 60000);
+
+    return () => clearInterval(interval);
+  }, []);
   return (
     <section>
       <div id="fitur" className="2xl:pt-24 pt-12">
@@ -206,7 +220,7 @@ export default function Bento() {
                   <div className="relative mt-6 sm:mt-auto h-fit -mb-10 -mr-10 sm:ml-6 py-6 p-6 border rounded-tl-xl bg-[#f8fbfb] dark:bg-[#e9f3f3]/5 dark:border-white/10">
                     <div className="w-full h-72 flex-col justify-center items-center gap-2.5 inline-flex">
                       <div className="w-full justify-start items-center gap-2.5 inline-flex">
-                        <div className="w-60 text-neutral-400 text-xs font-semibold leading-none tracking-tight text-primary">Today, {moment().format("MMMM Do YYYY")}</div>
+                        <div className="w-60 text-neutral-400 text-xs font-semibold leading-none tracking-tight text-primary">Today, {today}</div>
                         <div className="w-full h-px justify-center items-center flex">
                           <div className="w-full h-px border border-neutral-400 md:mr-3 mr-10"></div>
                         </div>
@@ -229,7 +243,7 @@ export default function Bento() {
                         <div className="w-3.5 h-3.5 bg-zinc-300 rounded-full md:mr-3 mr-10" />
                       </div>
                       <div className="w-full justify-start items-center gap-2.5 inline-flex">
-                        <div className="w-60 text-neutral-400 text-xs font-semibold leading-none tracking-tight text-primary">Yesterday, {moment().subtract(1, "days").format("MMMM Do YYYY")}</div>
+                        <div className="w-60 text-neutral-400 text-xs font-semibold leading-none tracking-tight text-primary">Yesterday, {yesterday}</div>
                         <div className="w-full h-px justify-center items-center flex">
                           <div className="w-full h-px border border-neutral-400 md:mr-3 mr-10"></div>
                         </div>

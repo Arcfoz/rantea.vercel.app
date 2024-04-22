@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { Button } from "./ui/button";
 import { MdOutlineFileDownload } from "react-icons/md";
+import Link from "next/link";
 
 export default function Banner() {
   return (
@@ -12,10 +13,12 @@ export default function Banner() {
             <div className="block text-center mb-5 lg:text-left lg:mb-0 lg:mt-0 mt-10">
               <h2 className="text-4xl font-semibold mb-5 lg:mb-2">Kenali Jenis Teh Hitam Ortodoks</h2>
               <p>yang diproduksi di PTPN VIII #LoveEveryMomentwithRantea ☕</p>
-              <Button className="min-[375px]:inline-flex gap-2 mt-2" variant={"outline"}>
-                <MdOutlineFileDownload />
-                Unduh aplikasi
-              </Button>
+              <Link href={"/application"}>
+                <Button className="min-[375px]:inline-flex gap-2 mt-2" variant={"outline"}>
+                  <MdOutlineFileDownload />
+                  Unduh aplikasi
+                </Button>
+              </Link>
             </div>
             <div className="w-80 h-full">
               <Image className="object-cover" src={"/banner.png"} alt="" width={1000} height={1000} />

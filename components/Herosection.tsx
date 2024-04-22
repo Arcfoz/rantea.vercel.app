@@ -27,9 +27,9 @@ export default function Herosection() {
         </div>
         <div className="flex flex-col gap-6">
           <div className="gap-4 items-center">
-            <Link href={"/#fitur"}>
+            <Link href={"/demo"}>
               <Button className="gap-2">
-                <h1>Fitur aplikasi</h1>
+                <h1>Demo klasifikasi</h1>
                 <FaRegArrowAltCircleRight />
               </Button>
             </Link>
