@@ -33,7 +33,7 @@ function PostImageCard({ slug, title, date, image, desc, min_read }: any) {
             <Link href={`/blog/${slug}`}>
               <h3 className="text-2xl font-semibold md:text-3xl hover:text-primary">{title}</h3>
             </Link>
-            <h4 className=" text-slate-400 text-lg font-normal leading-7">{desc}</h4>
+            <h4 className=" text-slate-400 text-lg font-normal line-clamp-3">{desc}</h4>
           </div>
         </div>
       </div>

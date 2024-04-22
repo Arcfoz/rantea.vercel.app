@@ -45,9 +45,9 @@ export default async function page({ params }: any) {
   const min_read = blog.data[0].attributes.min_read;
 
   return (
-    <main className="mx-auto min-h-screen max-w-6xl px-8 lg:px-16 2xl:pt-24 py-10">
+    <main className="mx-auto min-h-screen max-w-6xl px-6 lg:px-16 2xl:pt-24 py-10">
       <div className="flow-root">
-        <div className="flex flex-1 flex-col justify-between gap-y-2 md:flex-row md:items-center">
+        <div className="flex flex-1 flex-col justify-between items-center">
           <p className="inline-flex items-center justify-start gap-2">
             <span className="text-xs leading-none text-slate-400 flex gap-1">
               <IoIosCalendar />
@@ -60,13 +60,14 @@ export default async function page({ params }: any) {
             </span>
           </p>
         </div>
-        <h1 className="text-4xl font-bold lg:text-6xl lg:leading-tight mb-5 ">{title}</h1>
+        <h1 className="text-4xl font-bold lg:text-6xl lg:leading-tight text-center mt-5">{title}</h1>
+        <h2 className="mb-5 mt-3 text-slate-400 text-center tracking-wide mx-5 text-sm md:mx-20 md:text-base">{desc}</h2>
         <div className="text-left">
           <Image className="rounded-xl border-zinc-800 mx-auto" width={1000} height={1000} src={image} alt="" />
         </div>
-        <h2 className="mt-4 ">{desc}</h2>
-
-        <BlockRendererClient content={content} />
+        <div className="mt-4 max-w-2xl mx-auto tracking-wide">
+          <BlockRendererClient content={content} />
+        </div>
       </div>
     </main>
   );
